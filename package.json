@@ -1,0 +1,41 @@
+{
+  "name": "reactweb",
+  "version": "1.0.0",
+  "description": "Template project for React web",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node main.js",
+    "build": "webpack --mode development",
+    "build-prod": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parthav46/ReactWeb.git"
+  },
+  "author": "Parthav46",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Parthav46/ReactWeb/issues"
+  },
+  "homepage": "https://github.com/Parthav46/ReactWeb#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.2.2",
+    "babel-watch": "^7.4.1",
+    "css-loader": "^1.0.0",
+    "express": "^4.17.1",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-middleware": "^3.7.3",
+    "webpack-dev-server": "^3.1.8",
+    "webpack-hot-middleware": "^2.25.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
