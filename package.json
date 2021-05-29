@@ -7,7 +7,7 @@
     "dev": "tsc && node main.js",
     "build": "tsc && webpack --mode development",
     "build-prod": "tsc && webpack --mode production",
-    "cleanup": "del /s /q src/*.js dist"
+    "cleanup": "del /s /q src\\*.js && rmdir /s /q dist"
   },
   "repository": {
     "type": "git",
