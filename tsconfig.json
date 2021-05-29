@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "alwaysStrict": true,
+        "noImplicitAny": true,
+        "preserveConstEnums": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true
+    },
+    "include": ["src/utils/**/*"],
+    "exclude": ["node_modules"]
+}
