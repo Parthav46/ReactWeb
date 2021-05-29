@@ -1,10 +1,10 @@
 const express = require('express');
-const utils = require('./utils');
-const https = utils.Config.SERVER.HTTPS ? require('https') : require('http');
+const { default: GetConfig } = require('./src/utils/config');
+const https = GetConfig("SERVER:HTTPS") ? require('https') : require('http');
 const app = express();
 
-const host = utils.Config.SERVER.HOST;
-const port = utils.Config.SERVER.PORT;
+const host = GetConfig("SERVER:HOST");
+const port = GetConfig("SERVER:PORT");
 const devServerEnabled = (process.env.ENV || "development") == "development";
 
 // Webpack dependencies
@@ -55,5 +55,5 @@ app.use('/', web);
 
 const server = https.createServer(app);
 server.listen(port, host, () => {
-    console.log('Server started on: ' + (utils.Config.SERVER.HTTPS ? 'https://' : 'http://') + host + ':' + port);
+    console.log('Server started on: ' + (GetConfig("SERVER:HTTPS") ? 'https://' : 'http://') + host + ':' + port);
 });

@@ -4,8 +4,9 @@
         "alwaysStrict": true,
         "noImplicitAny": true,
         "preserveConstEnums": true,
-        "outDir": "src/utils"
+        "resolveJsonModule": true,
+        "esModuleInterop": true
     },
-    "include": ["utils/**/*"],
+    "include": ["src/utils/**/*"],
     "exclude": ["node_modules"]
 }
