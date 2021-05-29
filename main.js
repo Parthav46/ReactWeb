@@ -14,10 +14,10 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config.js');
 
 // API dependencies
-const api = require('./src/api/controller');
+const { default: api } = require('./src/api/controller');
 
 // Web dependencies
-const web = require('./src/ui/controller');
+const { default: web } = require('./src/ui/controller');
 
 // React webpack
 if (devServerEnabled) {

@@ -1,6 +1,11 @@
 # ReactWeb Toolchain
 This web application is created using Express server in Node JS along with React.
 
+## Stack:
+- Express
+- React
+- NodeJS
+
 ## Setup:
 - change the project config in `package.json`
 - run `npm install`
@@ -18,7 +23,7 @@ root
 └── src (source folder)
     ├── api (contains controller and content for apis)
     ├── ui (contains controller and views for web ui)
-    ├── utils (contains ts utils)
+    ├── utils (contains utils)
     └── react (react source folder)
         ├── modules (react source folder for main module)
         └── components (source folder for react components)

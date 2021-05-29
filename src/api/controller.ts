@@ -1,5 +1,5 @@
-const express = require('express');
-const { GetCookies, GetCookie } = require('../utils/web');
+import express from 'express';
+import { GetCookies, GetCookie } from '../utils/web';
 
 const app = express();
 
@@ -12,4 +12,4 @@ app.get('/:key', (req, res) => {
     res.end(GetCookie(req, key));
 })
 
-module.exports = app;
+export default app;

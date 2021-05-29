@@ -8,7 +8,7 @@ const configTemplate = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(ts|tsx)$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: "babel-loader",
                 options: { presets: ["@babel/env", "@babel/preset-react"] }
@@ -19,7 +19,7 @@ const configTemplate = {
             }
         ]
     },
-    resolve: { extensions: ["*", ".js", ".jsx"] },
+    resolve: { extensions: [".js", ".jsx", ".ts", ".tsx"] },
     output: {
         publicPath: "auto"
     },
@@ -46,8 +46,11 @@ function getConfig() {
     webpackConfig = [];
     reactSourcePath = path.join("./", "src/react");
     let files = getTree(path.join(reactSourcePath, "modules"));
+    files = files.filter(file => /\.(ts|tsx)/.test(file));
     files.forEach(file => {
         let filename = path.basename(file);
+        filename = filename.replace(".tsx", ".js");
+        filename = filename.replace(".ts", ".js");
         let dir = path.dirname(path.relative(reactSourcePath, file));
         let currentConfig = JSON.parse(JSON.stringify(configTemplate));
         currentConfig.module.rules = configTemplate.module.rules;
