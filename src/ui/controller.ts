@@ -5,7 +5,7 @@ const app = express();
 import { RenderHtml } from '../utils/web';
 const htmlDir = __dirname + '/views';
 
-app.get('/', (req: any, res: any) => {
+app.get('/', (req, res) => {
     RenderHtml(res, path.join(htmlDir, 'index.html'));
 })
 

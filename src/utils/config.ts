@@ -1,5 +1,10 @@
 import configData from '../../appsettings.json';
 
+/**
+ * Get config values from appsettings.json
+ * @param key Config location key ':' seperated
+ * @returns config value
+ */
 function GetConfig (key: string): any {
     let response = JSON.parse(JSON.stringify(configData));
     let isValid = true;

@@ -1,18 +1,20 @@
+import { Request, Response } from 'express';
+
 /**
- * @param {} res - Http response object
+ * @param {Response} res - Http response object
  * @param {String} file - Html file path relative to htmlDir
  * @param {Number} status - Response status code
  */
-function RenderHtml (res:any, file:string, status:number = 200) : void {
+function RenderHtml (res: Response, file: string, status: number = 200): void {
     res.status(status);
     res.sendFile(file);
 }
 
 /**
- * @param {} req req object
- * @returns {} cookies json
+ * @param {Request} req req object
+ * @returns cookies json
  */
-function GetCookies (req: any): any  {
+function GetCookies (req: Request): any  {
     const cookieStr = req.headers.cookie;
     var cookies = cookieStr.split('; ').reduce((res: any, cookie: string) => {
         const data = cookie.trim().split('=');
@@ -22,11 +24,11 @@ function GetCookies (req: any): any  {
 }
 
 /**
- * @param {} req request object
+ * @param {Request} req request object
  * @param {String} key cookie name
  * @returns {String} cookie value
  */
-function GetCookie (req: any, key: string): string {
+function GetCookie (req: Request, key: string): string {
     const cookies = GetCookies(req);
     if (cookies.hasOwnProperty(key)) return cookies[key];
     else return "";
